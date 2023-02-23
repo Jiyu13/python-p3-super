@@ -5,6 +5,8 @@ class Student(User):
 
     def __init__(self, name, grade):
         print("Student.log_in() called.")
+
+        # call User.__init__ method with that name that is required by method defined in User
         super().__init__(name)
         self.grade = grade
 
@@ -12,7 +14,7 @@ class Student(User):
     def log_in(self):
         print("Stuednt.log_in() called.")
 
-        #  super() calls one the log_in() as defined in the superclass
+        #  super() calls the log_in() as defined in the superclass
         super().log_in()
 
         # supercharge with new attribute that only for Student class
