@@ -5,7 +5,7 @@ class Student(User):
 
     def __init__(self, name, grade):
         print("Student.log_in() called.")
-        self.name = name
+        super().__init__(name)
         self.grade = grade
 
 
@@ -19,12 +19,17 @@ class Student(User):
         self.in_class = True
 
 
-oneil = Student()
-oneil.log_in()
-print(oneil.in_class)
+# oneil = Student()
+# oneil.log_in()
+# print(oneil.in_class)
 
 # Stuednt.log_in() called.
 # User.log_in() called.
 # True
 
+marley = Student("Marley", 6)
+# Student.log_in() called.
+# User.__init__() called.
 
+print(marley.__dict__)
+# {'name': 'Marley', 'grade': 6}
